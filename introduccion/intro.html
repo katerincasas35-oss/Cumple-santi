@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#829c73">
+<meta name="description" content="Libreta de cumpleaños para Santi // Edición Nivel 26.">
+<title>BIRTHDAY QUEST // SANTI 26 📓✨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Patrick+Hand&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   DIARIO SCRAPBOOK / BULLET JOURNAL (PAPEL BLANCO Y STICKERS)
+   Optimizado para celular y pantallas táctiles.
+   ========================================================= */
+:root {
+  --desk-bg: #859f77;
+  --journal-cover: #3e281c;
+  --paper: #ffffff;
+  --grid-line: rgba(160, 180, 205, 0.28);
+  --ink: #201e28;
+  --ink-soft: #4d495d;
+  --pink-pop: #ff5983;
+  --orange-pop: #ff9233;
+  --yellow-pop: #ffdb3b;
+  --green-pop: #57d488;
+  --cyan-pop: #38c8e6;
+  --blue-pop: #5188ff;
+  --purple-pop: #a066ff;
+  --washi-yellow: rgba(255, 230, 102, 0.88);
+  --washi-pink: rgba(255, 179, 198, 0.88);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.18) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0,0,0,0.12) 0%, transparent 45%),
+    var(--desk-bg);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 18px 8px 45px;
+  user-select: none;
+}
+button, input { font: inherit; }
+button { cursor: pointer; border: 0; }
+a { color: var(--pink-pop); text-decoration: none; font-weight: 700; }
+
+.journal-desk {
+  max-width: 760px;
+  margin: auto;
+  position: relative;
+}
+
+/* CLIP METÁLICO SUPERIOR */
+.binder-clip {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72px;
+  height: 38px;
+  background: linear-gradient(135deg, #e3c49d, #9c714d);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.binder-clip::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 3px solid #6e4c30;
+  border-radius: 50%;
+  background: #fdf6ed;
+}
+
+/* PESTAÑAS DECORATIVAS DEL BORDE */
+.side-tab {
+  position: absolute;
+  right: -14px;
+  width: 28px;
+  height: 24px;
+  border-radius: 4px 8px 8px 4px;
+  box-shadow: 2px 3px 5px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+.tab-1 { top: 60px; background: repeating-linear-gradient(45deg, #ff8fa3, #ff8fa3 4px, #fff 4px, #fff 8px); }
+.tab-2 { top: 110px; background: #ffe066; }
+.tab-3 { top: 160px; background: repeating-linear-gradient(-45deg, #80ed99, #80ed99 4px, #fff 4px, #fff 8px); }
+.tab-4 { top: 210px; background: #a2d2ff; }
+
+/* CUADERNO EN SÍ */
+.journal-spread {
+  background: var(--paper);
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border-radius: 18px;
+  padding: 26px 16px 30px;
+  position: relative;
+  box-shadow: 
+    0 0 0 6px var(--journal-cover),
+    0 0 0 8px #24160f,
+    0 15px 40px rgba(0,0,0,0.3);
+}
+@media (min-width: 480px) {
+  .journal-spread { padding: 30px 24px 34px; border-radius: 20px; }
+}
+
+/* TOPBAR */
+.journal-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed rgba(160, 180, 205, 0.4);
+}
+.date-stamp {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+}
+.sound-btn {
+  background: #f7f4ec;
+  border: 1px solid #dcd4c3;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+/* TÍTULO EN BURBUJAS DE STICKERS (FIX MÓVIL: NO WRAPPING DE LA "Y") */
+.bubble-title-wrap {
+  text-align: center;
+  margin: 8px 0 16px;
+}
+.bubble-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* Evita que la Y caiga abajo */
+  gap: 3px;
+  margin-bottom: 6px;
+}
+.sticker-letter {
+  display: inline-flex;
+  width: clamp(26px, 7.2vw, 38px);
+  height: clamp(26px, 7.2vw, 38px);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1.15rem, 4.3vw, 1.6rem);
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 1px 2px 0 rgba(0,0,0,0.14);
+  flex: 0 0 auto;
+}
+.bg-pink { background: var(--pink-pop); }
+.bg-orange { background: var(--orange-pop); }
+.bg-yellow { background: var(--yellow-pop); color: #3d3000; }
+.bg-green { background: var(--green-pop); }
+.bg-cyan { background: var(--cyan-pop); }
+.bg-blue { background: var(--blue-pop); }
+.bg-purple { background: var(--purple-pop); }
+
+.journal-subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1.15rem, 4vw, 1.35rem);
+  color: var(--ink-soft);
+  margin-top: 4px;
+}
+
+/* WASHI TAPE */
+.washi-strip {
+  position: absolute;
+  height: 18px;
+  width: 70px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  opacity: .92;
+  z-index: 10;
+}
+.washi-top-center {
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(1deg);
+}
+.washi-yellow-polka {
+  background: repeating-radial-gradient(circle, #f5d442, #f5d442 2px, #ffe666 2px, #ffe666 6px);
+}
+.washi-pink-stripes {
+  background: repeating-linear-gradient(45deg, #ff94ab, #ff94ab 3px, #ffccd6 3px, #ffccd6 7px);
+}
+
+/* DISPOSICIÓN CHECKLIST Y STICKERS (NO ESPICHADO) */
+.checklist-and-stickers {
+  margin: 14px 0 18px;
+}
+.stickers-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 0 6px;
+}
+.doodle-checklist {
+  background: #fffdf5;
+  border: 2px dashed #ded4be;
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1.1rem, 3.8vw, 1.25rem);
+  color: var(--ink);
+  box-shadow: 2px 3px 0 rgba(0,0,0,0.04);
+}
+.doodle-checklist div {
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.check-icon {
+  color: var(--green-pop);
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+/* SELECTOR DE PERSONAJES AMPLIADO (CASILLAS GRANDES) */
+.polaroid-selector {
+  background: #fbf9f4;
+  border: 2px dashed #ded5c3;
+  border-radius: 16px;
+  padding: 16px 12px;
+  margin: 18px 0;
+}
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+@media (min-width: 520px) {
+  .polaroid-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap:20px; }
+}
+.polaroid-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 8px 20px;
+  min-width: 0;
+  min-height: 0;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: all .2s;
+  border: 1px solid #ebd8c0;
+}
+.polaroid-card:active { transform: scale(0.97); }
+.polaroid-card.active {
+  box-shadow: 0 0 0 3px var(--pink-pop), 2px 8px 18px rgba(255, 89, 131, 0.35);
+  transform: translateY(-2px);
+}
+.polaroid-card.active::after {
+  content: "★ SELECCIONADO";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Patrick Hand', cursive;
+  font-size: .82rem;
+  color: var(--pink-pop);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.polaroid-photo {
+  width: 100%;
+  height: clamp(145px, 40vw, 175px);
+  background: transparent;
+  border-radius: 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  margin-bottom: 4px;
+}
+.polaroid-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.polaroid-name {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.35rem;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.polaroid-vibe {
+  font-size: .75rem;
+  color: var(--ink-soft);
+  line-height: 1.2;
+}
+
+/* RADAR CON TEXTO DE ALTO CONTRASTE (SANTI 26 AÑOS) */
+.sketch-radar-wrapper {
+  background: #f4f8fb;
+  border: 2px dashed #90a8c4;
+  border-radius: 16px;
+  padding: 18px 12px;
+  margin: 18px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.sketch-radar-circle {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #4a6d91;
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle, transparent 30%, rgba(74, 109, 145, 0.15) 31%, transparent 32%),
+    radial-gradient(circle, transparent 65%, rgba(74, 109, 145, 0.15) 66%, transparent 67%),
+    linear-gradient(rgba(74, 109, 145, 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 109, 145, 0.22) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+  background-position: center;
+}
+.sketch-radar-sweep {
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(from 0deg, rgba(56, 200, 230, 0.45) 0deg, transparent 65deg);
+  animation: sweepRadar 4s linear infinite;
+  transform-origin: center;
+  pointer-events: none;
+}
+@keyframes sweepRadar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.radar-santi-blip {
+  position: absolute;
+  top: 38%;
+  left: 60%;
+  width: 18px;
+  height: 18px;
+  background: var(--pink-pop);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--pink-pop);
+  animation: blipPulse 1.8s infinite;
+}
+/* PLACA DE ALTO CONTRASTE PARA SANTI 26 AÑOS */
+.radar-badge-text {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: #091728;
+  color: #38c8e6;
+  border: 2px solid #38c8e6;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+@keyframes blipPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: .4; }
+}
+
+/* BOTÓN DE ACCESO AL CENTRO DE MISIONES */
+.btn-launch-missions {
+  background: linear-gradient(135deg, #ff5983, #e62254);
+  color: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.45rem;
+  font-weight: 700;
+  box-shadow: 2px 4px 0 #9e1034;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: transform .15s, box-shadow .15s;
+  text-decoration: none;
+  margin-top: 18px;
+}
+.btn-launch-missions:active { transform: translateY(2px); box-shadow: 0 2px 0 #9e1034; }
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 20px);
+  background: #252030;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: all .2s;
+  z-index: 300;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head>
+<body>
+
+<div class="journal-desk">
+  <!-- CLIP METÁLICO -->
+  <div class="binder-clip" title="Cuaderno clasificado de Santi"></div>
+
+  <!-- PESTAÑAS LATERALES -->
+  <div class="side-tab tab-1"></div>
+  <div class="side-tab tab-2"></div>
+  <div class="side-tab tab-3"></div>
+  <div class="side-tab tab-4"></div>
+
+  <div class="journal-spread">
+    <!-- FECHA CORREGIDA: MARTES 27 DE OCTUBRE -->
+    <div class="journal-topbar">
+      <div class="date-stamp">
+        <span>📅 martes 27 de octubre</span>
+        <span style="color:var(--pink-pop);">♡</span>
+        <span>26 años</span>
+      </div>
+      <button class="sound-btn" onclick="toggleAudio()" id="soundBtn">
+        🔊 SFX
+      </button>
+    </div>
+
+    <!-- TÍTULO EN BURBUJAS (CON NOWRAP Y PROPORCIONES CUIDADAS) -->
+    <div class="bubble-title-wrap">
+      <div class="bubble-row">
+        <span class="sticker-letter bg-pink">B</span>
+        <span class="sticker-letter bg-orange">I</span>
+        <span class="sticker-letter bg-yellow">R</span>
+        <span class="sticker-letter bg-green">T</span>
+        <span class="sticker-letter bg-cyan">H</span>
+        <span class="sticker-letter bg-blue">D</span>
+        <span class="sticker-letter bg-purple">A</span>
+        <span class="sticker-letter bg-pink">Y</span>
+      </div>
+      <div class="bubble-row">
+        <span class="sticker-letter bg-orange">Q</span>
+        <span class="sticker-letter bg-yellow">U</span>
+        <span class="sticker-letter bg-green">E</span>
+        <span class="sticker-letter bg-cyan">S</span>
+        <span class="sticker-letter bg-pink">T</span>
+      </div>
+      <div class="journal-subtitle">
+        diario de misiones, ciencia, postres & rarezas espaciales ✨
+      </div>
+    </div>
+
+    <!-- CHECKLIST Y STICKERS AMPLIADOS (NO ESPICHADOS) -->
+    <div class="checklist-and-stickers">
+      <!-- Fila superior de pegatinas decorativas -->
+      <div class="stickers-header-row">
+        <div style="position:relative;">
+          <div class="washi-strip washi-top-center washi-yellow-polka" style="width:60px;"></div>
+          <img src="../SVG/pingucumpleRecurso 4.svg" alt="Pingu Cumple" style="width:82px; transform:rotate(-5deg);" onclick="playPinguSound()">
+        </div>
+        <div style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:var(--pink-pop); font-weight:700;">
+          ✦ Misión de cumpleaños
+        </div>
+        <div style="position:relative;">
+          <div class="washi-strip washi-top-center washi-pink-stripes" style="width:60px;"></div>
+          <img src="../SVG/bugambiliaRecurso 2.svg" alt="Bugambilia" style="width:78px; transform:rotate(8deg);">
+        </div>
+      </div>
+
+      <!-- Checklist a todo lo ancho -->
+      <div class="doodle-checklist">
+        <div><span class="check-icon">✓</span> Despertar y celebrar los 26 años</div>
+        <div><span class="check-icon">✓</span> Ingerir postre con 0% de resistencia</div>
+        <div><span class="check-icon">✓</span> Completar misiones con el copiloto favorito</div>
+      </div>
+    </div>
+
+    <!-- SELECTOR DE PERSONAJE AMPLIADO (CASILLAS GRANDES) -->
+    <div class="polaroid-selector">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:'Patrick Hand', cursive; font-size:1.35rem; color:var(--ink); font-weight:700;">
+          ✦ Elige tu personaje para esta aventura:
+        </span>
+        <span style="font-size:1.3rem;">✂️</span>
+      </div>
+
+      <div class="polaroid-grid">
+        <!-- MORA -->
+        <div class="polaroid-card active" id="card-mora" onclick="selectChar('mora')">
+          <div class="washi-strip washi-top-center washi-yellow-polka"></div>
+          <div class="polaroid-photo">
+            <img src="../SVG/moraRecurso 1.svg" alt="Mora">
+          </div>
+          <div class="polaroid-name">Mora</div>
+          <div class="polaroid-vibe">Intuitivo & sereno</div>
+        </div>
+
+        <!-- ROJO -->
+        <div class="polaroid-card" id="card-rojo" onclick="selectChar('rojo')">
+          <div class="washi-strip washi-top-center washi-pink-stripes"></div>
+          <div class="polaroid-photo">
+            <img src="../SVG/rojoRecurso 2.svg" alt="Rojo">
+          </div>
+          <div class="polaroid-name">Rojo</div>
+          <div class="polaroid-vibe">Enérgico & competitivo</div>
+        </div>
+
+        <!-- NEGRO -->
+        <div class="polaroid-card" id="card-negro" onclick="selectChar('negro')">
+          <div class="washi-strip washi-top-center washi-yellow-polka"></div>
+          <div class="polaroid-photo">
+            <img src="../SVG/negroRecurso 3.svg" alt="Negro">
+          </div>
+          <div class="polaroid-name">Negro</div>
+          <div class="polaroid-vibe">Estilizado & agudo</div>
+        </div>
+
+        <!-- LARGO -->
+        <div class="polaroid-card" id="card-largo" onclick="selectChar('largo')">
+          <div class="washi-strip washi-top-center washi-pink-stripes"></div>
+          <div class="polaroid-photo">
+            <img src="../SVG/largoRecurso 4.svg" alt="Largo">
+          </div>
+          <div class="polaroid-name">Largo</div>
+          <div class="polaroid-vibe">Flexible & relajado</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RADAR CON TEXTO DE ALTO CONTRASTE (SANTI 26 AÑOS) -->
+    <div class="sketch-radar-wrapper" onclick="pulseRadar()">
+      <div style="font-family:'Patrick Hand', cursive; font-size:1.25rem; color:#2e5073; font-weight:700; margin-bottom:10px;">
+        📡 RADAR DE COORDENADAS TERRESTRES · FREQ 27.10
+      </div>
+      <div class="sketch-radar-circle">
+        <div class="sketch-radar-sweep"></div>
+        <div class="radar-santi-blip" aria-hidden="true"></div>
+        <span class="radar-badge-text">SANTI · 26 AÑOS</span>
+      </div>
+      <div style="font-family:'Patrick Hand', cursive; font-size:1.05rem; color:#5c7896; margin-top:8px;">
+        (Toca el radar para calibrar la señal)
+      </div>
+    </div>
+
+    <!-- BOTÓN DE ENLACE AL CENTRO DE MISIONES (VIDEOJUEGO) -->
+    <a href="../centro.html" class="btn-launch-missions">
+      ENTRAR AL CENTRO DE MISIONES ▶
+    </a>
+    <div style="text-align:center; font-family:'Patrick Hand', cursive; font-size:1.15rem; color:var(--ink-soft); margin-top:8px;">
+      Tómate tu tiempo. Sin afán ni presiones.
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const characters = {
+  mora: { name: "Mora", file: "moraRecurso 1.svg" },
+  rojo: { name: "Rojo", file: "rojoRecurso 2.svg" },
+  negro: { name: "Negro", file: "negroRecurso 3.svg" },
+  largo: { name: "Largo", file: "largoRecurso 4.svg" }
+};
+let selectedChar = localStorage.getItem('santi_character') || 'mora';
+
+function selectChar(id) {
+  playSfx('blip');
+  selectedChar = id;
+  localStorage.setItem('santi_character', id);
+  document.querySelectorAll('.polaroid-card').forEach(c => c.classList.remove('active'));
+  const card = document.getElementById('card-' + id);
+  if (card) card.classList.add('active');
+  const char = characters[id] || characters.mora;
+  toast("Personaje seleccionado: " + char.name + " ✨");
+}
+
+let audioCtx = null;
+let soundEnabled = true;
+function initAudio() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) audioCtx = new AudioContext();
+  }
+}
+function playSfx(t) {
+  if (!soundEnabled) return;
+  initAudio();
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  if (t === 'blip') {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, now);
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.linearRampToValueAtTime(0, now + 0.08);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.08);
+  } else if (t === 'radar') {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(440, now);
+    osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+    gain.gain.setValueAtTime(0.14, now);
+    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.2);
+  }
+}
+function toggleAudio() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('soundBtn').textContent = soundEnabled ? '🔊 SFX' : '🔈 MUTE';
+  toast(soundEnabled ? "Sonido activado" : "Sonido silenciado");
+}
+function playPinguSound() {
+  playSfx('radar');
+  toast("Pingu: ¡Noot Noot de cumpleaños!");
+}
+function pulseRadar() {
+  playSfx('radar');
+  toast("📡 Radar fijado: Santi localizado en órbita a sus 26 años.");
+}
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+// Inicializar selección
+selectChar(selectedChar);
+</script>
+</body>
+</html>
+

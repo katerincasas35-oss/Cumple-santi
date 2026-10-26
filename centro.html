@@ -1,0 +1,1247 @@
+<!doctype html>
+<html lang="es">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0b14">
+<meta name="description" content="Centro de Operaciones y Misiones de Cumpleaños // Santi 26.">
+<title>CENTRO DE MISIONES // SANTI 26 🪐</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Patrick+Hand&family=Press+Start+2P&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   ESTILO VIDEOJUEGO / ESPACIO / HEXTECH LOL (CENTRO DE MISIONES)
+   ========================================================= */
+:root {
+  --bg: #0a0b12;
+  --panel: #131522;
+  --panel2: #1b1c2e;
+  --line: #2e3048;
+  --gold-hextech: #c8aa6e;
+  --gold-light: #f0e6d2;
+  --cyan-hextech: #0ac8b9;
+  --red: #f0506e;
+  --mint: #70e6b5;
+  --text: #f5f3f8;
+  --text-muted: #9e9db5;
+  --cream-note: #faf5ec;
+  --ink-paper: #221d26;
+  --radius: 18px;
+  --shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background: 
+    radial-gradient(ellipse at 15% 10%, #361730 0%, transparent 40rem),
+    radial-gradient(ellipse at 85% 35%, #152244 0%, transparent 40rem),
+    var(--bg);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 16px 10px 45px;
+  user-select: none;
+}
+button, input { font: inherit; }
+button { cursor: pointer; border: 0; }
+a { color: var(--gold-light); text-decoration: none; }
+
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .5;
+  z-index: -1;
+  background-image: 
+    radial-gradient(#ffffff 1px, transparent 1px),
+    radial-gradient(#b9b6ff 1.2px, transparent 1.2px),
+    radial-gradient(#0ac8b9 1.5px, transparent 1.5px);
+  background-size: 80px 80px, 140px 140px, 220px 220px;
+}
+
+.app {
+  max-width: 820px;
+  margin: auto;
+}
+
+/* TOPBAR ESPACIAL / VIDEOJUEGO */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  background: rgba(19, 21, 34, 0.9);
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+.brand-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: .65rem;
+  color: var(--gold-hextech);
+  letter-spacing: .08em;
+}
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-notebook-link {
+  background: #25233d;
+  color: #ff94ab;
+  border: 1px solid #ff5983;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: .75rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all .2s;
+}
+.btn-notebook-link:hover { background: #352d54; }
+.pilot-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #181928;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .78rem;
+  color: var(--mint);
+  font-weight: 700;
+}
+.pilot-pill img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid var(--mint);
+  background: #0f1019;
+  object-fit: contain;
+}
+.sound-toggle {
+  background: #181928;
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: .75rem;
+  font-weight: 700;
+}
+.sound-toggle.on { color: var(--mint); border-color: rgba(112, 230, 181, 0.4); }
+
+/* PANEL PRINCIPAL */
+.panel {
+  background: linear-gradient(155deg, rgba(25, 27, 42, 0.95), rgba(16, 17, 26, 0.96));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  position: relative;
+}
+.eyebrow {
+  font-size: .72rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--red);
+  border-radius: 50%;
+}
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: .98;
+  letter-spacing: -.03em;
+  margin: 6px 0 12px;
+}
+h2 {
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+  line-height: 1.1;
+  margin: 6px 0 10px;
+}
+p { color: #d6d3e3; }
+.muted { color: var(--text-muted); }
+
+/* BOTONES */
+.btn {
+  border-radius: 14px;
+  padding: 13px 20px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform .15s, box-shadow .2s;
+  text-align: center;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary {
+  background: linear-gradient(135deg, #f0506e, #c02b4d);
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(240, 80, 110, 0.35);
+}
+.btn-primary:hover { filter: brightness(1.1); }
+.btn-secondary {
+  background: var(--panel2);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.btn-block { width: 100%; margin-top: 10px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+/* BARRA DE PROGRESO */
+.progress-wrap {
+  height: 9px;
+  background: #202234;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 14px 0 8px;
+  border: 1px solid #2e314a;
+}
+.progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--red), #b9b6ff, var(--cyan-hextech));
+  transition: width .4s ease;
+  box-shadow: 0 0 12px rgba(185, 182, 255, 0.5);
+}
+
+/* GRID DE MISIONES */
+.grid { display: grid; grid-template-columns: 1fr; gap: 11px; }
+@media (min-width: 560px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .grid .wide { grid-column: 1 / -1; }
+}
+.mission {
+  padding: 15px;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  text-align: left;
+  color: var(--text);
+  width: 100%;
+  transition: transform .15s, border-color .2s;
+}
+.mission:hover {
+  border-color: #4b4e72;
+  transform: translateY(-2px);
+  background: #23253b;
+}
+.mission.done { border-color: rgba(112, 230, 181, 0.5); }
+.mission.done .mission-icon {
+  background: #153327;
+  border-color: rgba(112, 230, 181, 0.6);
+}
+.mission-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #2a253a;
+  font-size: 1.5rem;
+  border: 1px solid #3c3854;
+}
+.mission-title { font-weight: 700; font-size: .98rem; }
+.mission p { font-size: .83rem; margin: 4px 0 0; color: var(--text-muted); }
+.tag {
+  display: inline-block;
+  font-size: .65rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 999px;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+/* MEDALLAS HEXTECH LOL */
+.hextech-card {
+  margin-top: 22px;
+  background: radial-gradient(ellipse at 50% 0%, #152238 0%, #0a0e18 80%);
+  border: 1px solid #785a28;
+  box-shadow: 0 0 25px rgba(0,0,0,0.8), inset 0 0 15px rgba(200, 170, 110, 0.15);
+  border-radius: 18px;
+  padding: 20px;
+}
+.badge-grid-lol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (min-width: 520px) {
+  .badge-grid-lol { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.lol-medal {
+  background: linear-gradient(145deg, #101927, #090e17);
+  border: 1px solid #4a3b1d;
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s;
+}
+.lol-medal.unlocked {
+  border-color: #c8aa6e;
+  box-shadow: 0 0 16px rgba(200, 170, 110, 0.35);
+}
+.lol-medal.special-honor {
+  border-color: #0ac8b9;
+  background: linear-gradient(145deg, #0e2433, #081420);
+  box-shadow: 0 0 20px rgba(10, 200, 185, 0.4);
+}
+.crest-frame {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 6px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.crest-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #5a4622;
+  transform: rotate(45deg);
+  border-radius: 8px;
+  background: #0c1420;
+}
+.lol-medal.unlocked .crest-outer { border-color: #c8aa6e; }
+.lol-medal.special-honor .crest-outer { border-color: #0ac8b9; }
+.crest-icon { position: relative; z-index: 2; font-size: 1.55rem; }
+.rank-label {
+  font-family: 'Cinzel', serif;
+  font-size: .62rem;
+  color: var(--gold-hextech);
+  display: block;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* SOBRES, QUIZ & CARTA 3D */
+.screen { display: none; }
+.screen.active {
+  display: block;
+  animation: fadeIn .35s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #20202e;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin: 8px 0;
+  transition: all .2s;
+}
+.answer.correct { border-color:#70e6b5; background:rgba(112,230,181,.18); }
+.answer.incorrect { border-color:#f0506e; background:rgba(240,80,110,.18); }
+.answer.selected {
+  border-color: #b9b6ff;
+  background: #2e2947;
+}
+.envelope {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #5a3d4f;
+  background: linear-gradient(140deg, #38202f, #1e1623);
+  color: var(--text);
+  padding: 15px;
+  border-radius: 14px;
+  margin: 8px 0;
+}
+.envelope .seal {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #7d2a45;
+  margin-right: 10px;
+  font-size: 1.1rem;
+  vertical-align: middle;
+}
+.note {
+  background: var(--cream-note);
+  color: var(--ink-paper);
+  padding: 16px;
+  border-radius: 4px 14px 14px 14px;
+  margin-top: 10px;
+}
+
+/* CARTA FINAL OVERLAY */
+.letter-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 7, 13, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 200;
+  display: none;
+  place-items: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+.letter-overlay.active { display: grid; animation: fadeIn .3s ease; }
+.envelope-3d {
+  position: relative;
+  width: min(100%, 520px);
+  height: 290px;
+  background: linear-gradient(145deg, #442a38, #2a1b24);
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8), 0 0 0 1px #6b4055;
+  cursor: pointer;
+  margin: auto;
+}
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  background: linear-gradient(180deg, #573347, #3f2533);
+  transform-origin: top center;
+  transition: transform .7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 4;
+}
+.wax-seal {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ba2d4d, #681527);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  display: grid;
+  place-items: center;
+  color: #f7d1dc;
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  font-weight: 900;
+  z-index: 5;
+  border: 2px solid #8e2239;
+}
+.sheet-letter {
+  background: #fbf6ec;
+  color: #241d24;
+  border-radius: 12px;
+  padding: 26px 20px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  max-width: 540px;
+  margin: 20px auto;
+  border: 1px solid #dcd1be;
+  display: none;
+  line-height: 1.7;
+}
+.sheet-letter.open { display: block; animation: fadeIn .5s ease; }
+.letter-art-frame {
+  background: #f0eae0;
+  border: 2px dashed #b8ad96;
+  border-radius: 10px;
+  padding: 8px;
+  text-align: center;
+  margin: 12px 0 16px;
+}
+.letter-art-frame img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 20px);
+  background: #f0e6d2;
+  color: #121018;
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  font-size: .84rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: all .25s ease;
+  z-index: 300;
+  white-space: nowrap;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+.hidden { display: none !important; }
+
+.memory-photo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:16px 0 22px}
+.memory-photo-card{margin:0;overflow:hidden;background:#181928;border:1px solid var(--line);border-radius:12px}
+.memory-photo-card a{display:block;line-height:0}
+.memory-photo-card img{display:block;width:100%;height:220px;object-fit:cover;transition:transform .25s}
+.memory-photo-card a:hover img{transform:scale(1.035)}
+.memory-photo-card figcaption{padding:9px 11px 11px;color:var(--text-muted);font-size:.82rem;line-height:1.35}
+.memory-sticker-row{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;padding:14px;border:1px dashed var(--line);border-radius:12px}
+.memory-sticker-row img{max-width:72px;max-height:60px;object-fit:contain}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<div class="app">
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="brand-title">BQ.exe // SANTI 26</div>
+    <div class="top-actions">
+      <!-- Enlace para volver a ver la Libreta Ilustrada / cambiar personaje -->
+      <a href="introduccion/intro.html" class="btn-notebook-link">
+        📖 Ver Libreta / Avatar
+      </a>
+      <div class="pilot-pill" id="pilotPill">
+        <img id="pilotImg" src="SVG/moraRecurso 1.svg" alt="Avatar">
+        <span id="pilotName">Mora</span>
+      </div>
+      <button class="sound-toggle on" id="soundBtn" onclick="toggleAudio()">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       CENTRO DE MISIONES (VIDEOJUEGO & HEXTECH)
+       ========================================================= -->
+  <section class="screen active" id="map">
+    <div class="panel">
+      <div class="eyebrow">CENTRO DE OPERACIONES // ORBITAL 27.10</div>
+      <h1>Elige tu siguiente problema.</h1>
+      <p class="muted">
+        Explora los registros, responde a los dilemas con criterio empírico y desbloquea las medallas de invocador.
+      </p>
+
+      <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+      <div style="display:flex; justify-content:space-between; font-size:.78rem; color:var(--text-muted);">
+        <span id="progressLabel">0 de 7 misiones completadas</span>
+        <span id="rankBadgePreview" style="color:var(--gold-hextech); font-weight:700;">Rango: Aspirante</span>
+      </div>
+
+      <!-- GRID DE MISIONES -->
+      <div class="grid" style="margin-top:16px;">
+        <!-- 01: BUGS & DINOSAURIOS -->
+        <button class="mission" data-mission="bugs" onclick="openMission('bugs')">
+          <div class="mission-icon">🪲</div>
+          <div>
+            <div class="mission-title">01 · Bug Hunter & Paleontología</div>
+            <p>Observación entomológica y dilemas de dinosaurios.</p>
+            <span class="tag">Exploración</span>
+          </div>
+        </button>
+
+        <!-- 02: RANKED & CAOS LATINOAMERICANO -->
+        <button class="mission" data-mission="ranked" onclick="openMission('ranked')">
+          <div class="mission-icon">⚔️</div>
+          <div>
+            <div class="mission-title">02 · Ranked & Caos</div>
+            <p>Dilemas sociopolíticos de Latinoamérica y SoloQ.</p>
+            <span class="tag">Miniquiz</span>
+          </div>
+        </button>
+
+        <!-- 03: RADIO CLANDESTINA -->
+        <button class="mission" data-mission="radio" onclick="openMission('radio')">
+          <div class="mission-icon">📻</div>
+          <div>
+            <div class="mission-title">03 · Radio Clandestina</div>
+            <p>Frecuencia libre y canciones que dicen algo.</p>
+            <span class="tag">Música</span>
+          </div>
+        </button>
+
+        <!-- 04: SALA ARCADE MODULAR -->
+        <button class="mission" data-mission="archive" onclick="openArcade()">
+          <div class="mission-icon">👾</div>
+          <div>
+            <div class="mission-title">04 · Creatures & Weird Things</div>
+            <p>Bebop, Pingu, Vive 100 Rojo y Cacería al Blanco.</p>
+            <span class="tag" style="color:var(--cyan-hextech); border-color:var(--cyan-hextech);">▶ Abrir Sala Arcade ↗</span>
+          </div>
+        </button>
+
+        <!-- 05: GALERÍA VISUAL -->
+        <button class="mission" data-mission="memories" onclick="openMission('memories')">
+          <div class="mission-icon">🖼️</div>
+          <div>
+            <div class="mission-title">05 · Galería Personal</div>
+            <p>Bugambilias, recuerdos y momentos compartidos.</p>
+            <span class="tag">Recuerdos</span>
+          </div>
+        </button>
+
+        <!-- 06: SOBRES (CON EL CHISTE DEL CARRO TRASLADADO AQUÍ) -->
+        <button class="mission" data-mission="envelopes" onclick="openMission('envelopes')">
+          <div class="mission-icon">✉️</div>
+          <div>
+            <div class="mission-title">06 · Correos Secretos</div>
+            <p>Manual de usuario y mensajes secretos.</p>
+            <span class="tag">Confidencial</span>
+          </div>
+        </button>
+
+        <!-- FINAL: CARTA 3D -->
+        <button class="mission wide" data-mission="final" onclick="openMission('final')">
+          <div class="mission-icon">💌</div>
+          <div>
+            <div class="mission-title">FINAL · One Last Thing</div>
+            <p>Recompensa final: sobre físico con lacre y la ilustración especial.</p>
+            <span class="tag" style="color:var(--red); border-color:var(--red);">Carta Especial</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- INVENTARIO HEXTECH / LOL CON MEDALLA DE DEJAR DE FUMAR -->
+      <div class="hextech-card">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-family:'Cinzel', serif; letter-spacing:.12em; color:var(--gold-light); font-size:1.1rem;">
+            INVENTARIO HEXTECH // LOGROS
+          </span>
+          <span style="font-size:.7rem; background:#005a82; color:#a5ecff; padding:3px 10px; border-radius:999px; font-weight:700;">
+            MAESTRÍAS & HONOR
+          </span>
+        </div>
+        <p class="small muted" style="margin-top:4px;">Emblemas forjados en hexita y oro piltoveriano.</p>
+        <div class="badge-grid-lol" id="badgeGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN 01: BUG HUNTER & PALEONTOLOGÍA (CON DINOSAURIOS)
+       ========================================================= -->
+  <section class="screen" id="bugs">
+    <div class="panel">
+      <div class="eyebrow">MISIÓN 01 · ENTOMOLOGÍA & PALEONTOLOGÍA</div>
+      <h2>Bug Hunter & Criaturas Prehistóricas 🐜🦖</h2>
+      <p class="muted">Toca los especímenes para catalogarlos en tu registro científico:</p>
+
+      <div style="background:#111119; border:2px dashed #494565; border-radius:14px; padding:16px; text-align:center;">
+        <div style="font-size:2.5rem;" id="bugDisplay">🪲</div>
+        <div id="bugFact" style="font-weight:700; margin-top:6px; font-size:1.05rem;">Selecciona una criatura.</div>
+        <div id="bugDescription" style="font-size:.85rem; color:var(--text-muted); max-width:440px; margin:auto;">
+          La ciencia exige curiosidad por lo vivo, tanto en el jardín como en el registro fósil.
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:8px; margin:14px 0;">
+        <button class="answer" id="bug0" onclick="findBug(0)">🪲 Escarabajo</button>
+        <button class="answer" id="bug1" onclick="findBug(1)">🦋 Polilla</button>
+        <button class="answer" id="bug2" onclick="findBug(2)">🐜 Hormiga</button>
+      </div>
+
+      <div class="progress-wrap"><div class="progress" id="bugProgress"></div></div>
+      <div class="small" id="bugCount" style="color:var(--text-muted); margin-bottom:14px;">0 / 3 criaturas catalogadas</div>
+
+      <!-- PREGUNTA DE DINOSAURIOS -->
+      <div style="background:#1b1c2e; padding:16px; border-radius:14px; margin:14px 0;">
+        <div class="eyebrow" style="color:var(--mint);">PREGUNTA PALEONTOLÓGICA</div>
+        <h3 style="font-size:1rem; margin-top:4px;">
+          ¿A qué grupo de dinosaurios pertenece el Triceratops?
+        </h3>
+        <button class="answer" onclick="answerDino('a', this)">A. Terópodos</button>
+        <button class="answer" onclick="answerDino('b', this)">B. Ceratópsidos</button>
+        <button class="answer" onclick="answerDino('c', this)">C. Sauropodomorfos</button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="showScreen('map')">← Volver al mapa</button>
+        <button class="btn btn-primary" id="bugContinue" disabled onclick="completeMission('bugs','Bug Hunter & Dino');showScreen('map')">
+          Registrar misión ✓
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN 02: RANKED & CAOS (SOCIOPOLÍTICA LATINOAMERICANA + LOL)
+       ========================================================= -->
+  <section class="screen" id="ranked">
+    <div class="panel">
+      <div class="eyebrow">MISIÓN 02 · EVALUACIÓN CRÍTICA & COYUNTURA</div>
+      <h2>Ranked, Política & Realidad Latinoamericana</h2>
+      <p class="muted">Responde estas preguntas de cultura cívica y videojuegos:</p>
+
+      <div id="quiz">
+        <!-- P1: DILEMA SOCIOPOLÍTICO LATINOAMERICANO -->
+        <div style="background:#1b1c2e; padding:16px; border-radius:14px; margin:10px 0;">
+          <h3 style="font-size:1rem;">01. ¿En qué año se promulgó la Constitución Política de Colombia actualmente vigente?</h3>
+          <button class="answer" onclick="answerQuiz(0,'a',this)">A. 1886</button>
+          <button class="answer" onclick="answerQuiz(0,'b',this)">B. 1991</button>
+          <button class="answer" onclick="answerQuiz(0,'c',this)">C. 2005</button>
+        </div>
+
+        <!-- P2: PREGUNTA OFICIAL DE LOL -->
+        <div style="background:#1b1c2e; padding:16px; border-radius:14px; margin:10px 0;">
+          <h3 style="font-size:1rem; color:var(--gold-hextech);">02. En LoL, ¿qué objetivo neutral puede otorgar un beneficio permanente al equipo al derrotarlo?</h3>
+          <button class="answer" onclick="answerQuiz(1,'a',this)">A. Un súbdito de asedio</button>
+          <button class="answer" onclick="answerQuiz(1,'b',this)">B. Un campamento de lobos</button>
+          <button class="answer" onclick="answerQuiz(1,'c',this)">C. Un dragón elemental</button>
+        </div>
+
+        <!-- P3: DEBATE SOCIAL Y MOVILIZACIÓN -->
+        <div style="background:#1b1c2e; padding:16px; border-radius:14px; margin:10px 0;">
+          <h3 style="font-size:1rem;">03. ¿Cuál es la función democrática de la separación de poderes?</h3>
+          <button class="answer" onclick="answerQuiz(2,'a',this)">A. Concentrar decisiones en una sola autoridad</button>
+          <button class="answer" onclick="answerQuiz(2,'b',this)">B. Distribuir funciones y permitir controles entre ramas</button>
+          <button class="answer" onclick="answerQuiz(2,'c',this)">C. Sustituir elecciones por decisiones judiciales</button>
+        </div>
+      </div>
+
+      <div id="quizResult" class="note hidden"></div>
+
+      <button class="btn btn-primary btn-block" id="quizSubmit" onclick="submitQuiz()">
+        Enviar análisis crítico ✓
+      </button>
+      <button class="btn btn-secondary btn-block" onclick="showScreen('map')">← Volver al mapa</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN 03: RADIO CLANDESTINA
+       ========================================================= -->
+  <section class="screen" id="radio">
+    <div class="panel">
+      <div class="eyebrow">MISIÓN 03 · FRECUENCIA LIBRE</div>
+      <h2>Radio Clandestina 📻</h2>
+      <p class="muted">Para canciones que dicen algo y acompañan los momentos de introspección.</p>
+
+      <div style="background:#181928; border:1px solid var(--line); border-radius:14px; padding:16px; margin:14px 0;">
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; background:#10111a; padding:10px 14px; border-radius:8px;">
+            <span>♪ Seatbelts — Tank! (Cowboy Bebop)</span>
+            <a href="https://www.youtube.com/results?search_query=Seatbelts+Tank+Cowboy+Bebop" target="_blank" rel="noopener">Escuchar ↗</a>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; background:#10111a; padding:10px 14px; border-radius:8px;">
+            <span>♪ The Real Folk Blues — Mai Yamane</span>
+            <a href="https://www.youtube.com/results?search_query=The+Real+Folk+Blues" target="_blank" rel="noopener">Escuchar ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <section style="background:#181928;border:1px solid var(--line);border-radius:14px;padding:16px;margin:16px 0"><div class="eyebrow">LORE DE INTERNET</div><p><a href="https://www.instagram.com/reel/DcwuTeDpWO3/?dlrf=MTdnNDFlY2JzcTZxNw==" target="_blank" rel="noopener">01 · Ella es una chica full ↗</a></p><p><a href="https://www.instagram.com/reel/DeQLlJoM4MC/?mdxt=YWRjMWNlNGFuMTZ3" target="_blank" rel="noopener">02 · Shaaa fueee ↗</a></p><p><a href="https://www.instagram.com/darkololxd2/" target="_blank" rel="noopener">03 · Drako ↗</a></p></section>      <div style="background:#1e1b2e; border-left:3px solid var(--gold-hextech); padding:14px 16px; border-radius:0 12px 12px 0;">
+        <p style="margin:0; font-size:.92rem; color:#dcd7ea;">
+          Una buena playlist no va a solucionar las fallas estructurales del mundo. Pero acompaña las caminatas, inspira proyectos que parecen imposibles y musicaliza cualquier trayecto con dignidad.
+        </p>
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="completeMission('radio','Frecuencia Libre');showScreen('map')">
+        Guardar frecuencia ✓
+      </button>
+      <button class="btn btn-secondary btn-block" onclick="showScreen('map')">← Volver al mapa</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN 05: GALERÍA VISUAL
+       ========================================================= -->
+  <section class="screen" id="memories">
+    <div class="panel">
+      <div class="eyebrow">MISIÓN 05 · RECUERDOS & DETALLES</div>
+      <h2>Galería Personal</h2>
+      <p class="muted">Pequeños archivos visuales, naturaleza y cosas que forman parte de tu mundo.</p>
+
+      <div class="memory-photo-grid">
+        <figure class="memory-photo-card"><a href="fotosgaleria/acostado%20en%20el%20piso%201.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/acostado%20en%20el%20piso%201.jpeg" alt="Acostado en el piso 1" loading="lazy" decoding="async"></a><figcaption>Acostado en el piso 1</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/acostado%20en%20el%20piso%202.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/acostado%20en%20el%20piso%202.jpeg" alt="Acostado en el piso 2" loading="lazy" decoding="async"></a><figcaption>Acostado en el piso 2</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/cuando%20comimos%20burro%20de%20sushi.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/cuando%20comimos%20burro%20de%20sushi.jpeg" alt="Cuando comimos burro de sushi" loading="lazy" decoding="async"></a><figcaption>Cuando comimos burro de sushi</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/dibujo%20random%20de%20santi.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/dibujo%20random%20de%20santi.jpeg" alt="Dibujo random de santi" loading="lazy" decoding="async"></a><figcaption>Dibujo random de santi</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20almorzando.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20almorzando.jpeg" alt="Santi almorzando" loading="lazy" decoding="async"></a><figcaption>Santi almorzando</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20compro%20un%20trapero.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20compro%20un%20trapero.jpeg" alt="Santi compro un trapero" loading="lazy" decoding="async"></a><figcaption>Santi compro un trapero</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20con%20anita.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20con%20anita.jpeg" alt="Santi con anita" loading="lazy" decoding="async"></a><figcaption>Santi con anita</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20concentrado%20viendo%20boxeo.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20concentrado%20viendo%20boxeo.jpeg" alt="Santi concentrado viendo boxeo" loading="lazy" decoding="async"></a><figcaption>Santi concentrado viendo boxeo</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20cuando%20iba%20a%20escalar.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20cuando%20iba%20a%20escalar.jpeg" alt="Santi cuando iba a escalar" loading="lazy" decoding="async"></a><figcaption>Santi cuando iba a escalar</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20diciendo%20que%20esta%20brotado.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20diciendo%20que%20esta%20brotado.jpeg" alt="Santi diciendo que esta brotado" loading="lazy" decoding="async"></a><figcaption>Santi diciendo que esta brotado</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20dindo.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20dindo.jpeg" alt="Santi dindo" loading="lazy" decoding="async"></a><figcaption>Santi dindo</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20en%20carro%20de%20compras.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20en%20carro%20de%20compras.jpeg" alt="Santi en carro de compras" loading="lazy" decoding="async"></a><figcaption>Santi en carro de compras</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20en%20trasmilenio.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20en%20trasmilenio.jpeg" alt="Santi en trasmilenio" loading="lazy" decoding="async"></a><figcaption>Santi en trasmilenio</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/Santi%20estirandose.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/Santi%20estirandose.jpeg" alt="Santi estirandose" loading="lazy" decoding="async"></a><figcaption>Santi estirandose</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santi%20lab.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santi%20lab.jpeg" alt="Santi lab" loading="lazy" decoding="async"></a><figcaption>Santi lab</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santiensalon.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santiensalon.jpeg" alt="Santiensalon" loading="lazy" decoding="async"></a><figcaption>Santiensalon</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santimostrandodibujo.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santimostrandodibujo.jpeg" alt="Santimostrandodibujo" loading="lazy" decoding="async"></a><figcaption>Santimostrandodibujo</figcaption></figure>
+        <figure class="memory-photo-card"><a href="fotosgaleria/santipapasfritas%20en%20lab%20108.jpeg" target="_blank" rel="noopener"><img src="fotosgaleria/santipapasfritas%20en%20lab%20108.jpeg" alt="Santipapasfritas en lab 108" loading="lazy" decoding="async"></a><figcaption>Santipapasfritas en lab 108</figcaption></figure>
+      </div>
+
+      <div class="memory-sticker-row" aria-label="Ilustraciones de la colección">
+        <img src="SVG/bugambiliaRecurso 2.svg" alt="Ilustración de bugambilia" loading="lazy">
+        <img src="SVG/pingucumpleRecurso 4.svg" alt="Pingu festivo" loading="lazy">
+        <img src="SVG/vive100.png" alt="Vive 100 Rojo" loading="lazy">
+      </div>
+
+      <button class="btn btn-primary btn-block" onclick="completeMission('memories','Curador Visual');showScreen('map')">
+        Guardar recuerdos ✓
+      </button>
+      <button class="btn btn-secondary btn-block" onclick="showScreen('map')">← Volver al mapa</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN 06: SOBRES ORBITALES (CON EL CHISTE DEL CARRO AQUÍ)
+       ========================================================= -->
+  <section class="screen" id="envelopes">
+    <div class="panel">
+      <div class="eyebrow">MISIÓN 06 · CORREOS SECRETOS</div>
+      <h2>Tienes correos en órbita.</h2>
+      <p class="muted">Tres comunicaciones confidenciales. Tócalas para abrir su interior:</p>
+
+      <button class="envelope" onclick="openEnv(0)">
+        <span class="seal">✉</span>
+        <strong>Mensaje 001: Manual de usuario</strong><br>
+        <span class="small muted">Advertencias de fábrica no solicitadas.</span>
+        <div id="envText0" class="hidden note">
+          <p><strong>Observación:</strong> Este sujeto puede responder con pocas palabras incluso cuando la conversación pide un ensayo largo. Pero cuando habla de algo que le apasiona, se nota la diferencia. También puede enviar un sticker indescifrable como reacción a una foto bonita.</p>
+        </div>
+      </button>
+
+      <button class="envelope" onclick="openEnv(1)">
+        <span class="seal">★</span>
+        <strong>Mensaje 002: Reconocimiento sincero</strong><br>
+        <span class="small muted">Sin ponerse excesivamente solemne.</span>
+        <div id="envText1" class="hidden note">
+          <p>Fuera de bromas: me gusta que tengas tu propio mundo, tus gustos particulares, tus ideas firmes y esas cosas que te apasionan aunque no sean del agrado de todo el mundo. Ojalá sigas encontrando tiempo para ellas mientras construyes todo lo que tienes en mente.</p>
+        </div>
+      </button>
+
+      <button class="envelope" onclick="openEnv(3)"><span class="seal">♪</span><strong>Mensaje 003: Tu otra crush, Hatsune Miku</strong><br><span class="small muted">Expediente de la diva virtual.</span><div id="envText3" class="hidden note"><img src="SVG/mikuRecurso 12.svg" alt="Hatsune Miku" style="display:block;max-height:150px;margin:8px auto"><p>Una voz digital, infinitas canciones y una presencia imposible de ignorar.</p></div></button>      <button class="btn btn-primary btn-block" onclick="completeMission('envelopes','Mensajero Estelar');showScreen('map')">
+        Cerrar correspondencia ✓
+      </button>
+      <button class="btn btn-secondary btn-block" onclick="showScreen('map')">← Volver al mapa</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MISIÓN FINAL: LA CARTA 3D CON SVG HANGRECURSO1
+       ========================================================= -->
+  <section class="screen" id="final">
+    <div class="panel" style="text-align:center;">
+      <div class="eyebrow" style="justify-content:center;">MISIÓN FINAL · RECOMPENSA</div>
+      <h2>One Last Thing.</h2>
+      <p class="muted">
+        Has completado la ruta. Toca el botón para desplegar el sobre con la carta de cumpleaños y tu ilustración especial.
+      </p>
+
+      <button class="btn btn-primary" style="font-size:1.05rem; padding:16px 28px; margin:20px 0;" onclick="openFinalLetterModal()">
+        💌 ABRIR LA CARTA SOBREPUESTA EN PANTALLA
+      </button>
+
+      <div>
+        <button class="btn btn-secondary" onclick="showScreen('map')">← Volver al mapa</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- =========================================================
+     MODAL OVERLAY DE LA CARTA 3D CON SVG HANGRECURSO1
+     ========================================================= -->
+<div class="letter-overlay" id="letterModalOverlay" onclick="handleLetterOverlayClick(event)">
+  <div style="width:100%; max-width:540px; margin:auto;">
+    <!-- SOBRE 3D CERRADO -->
+    <div class="envelope-3d" id="envelope3D" onclick="breakSeal()">
+      <div class="envelope-flap" id="envelopeFlap"></div>
+      <div class="wax-seal" id="waxSeal">S</div>
+      <div style="position:absolute; bottom:14px; width:100%; text-align:center; color:#ffd6e0; font-family:'Patrick Hand', cursive; font-size:1.15rem; z-index:4;">
+        ✦ TOCA EL SELLO DE LACRE PARA ABRIR ✦
+      </div>
+    </div>
+
+    <!-- CARTA PAPEL DESPLEGADA CON SVG HANGRECURSO1 -->
+    <div class="sheet-letter" id="sheetLetter">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <span style="font-family:'Patrick Hand', cursive; font-size:1.2rem; color:#7a1f38; font-weight:700;">
+          🌺 27 DE OCTUBRE · CARTA DE CUMPLEAÑOS
+        </span>
+        <button onclick="closeFinalLetterModal()" style="background:transparent; font-size:1.3rem; color:#7a1f38;">✕</button>
+      </div>
+
+      <!-- ILUSTRACIÓN ESPECIAL HANGRECURSO 1 -->
+      <div class="letter-art-frame">
+        <img src="SVG/hangRecurso 1.svg" alt="Ilustración para Santi">
+
+      </div>
+
+      <h3 style="font-family:'Patrick Hand', cursive; font-size:1.8rem; color:#7a1f38; margin:0 0 10px;">
+        Santi, feliz cumpleaños. 💗
+      </h3>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:#2c2530; margin-bottom:12px;">
+        Espero que tus 26 vengan cargados de proyectos que te emocionen, retos que te inspiren, postres suficientes para sobrevivir a la existencia y tiempo real para hacer las cosas que te gustan, incluso cuando la carrera te tenga a mil por hora.
+      </p>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:#2c2530; margin-bottom:12px;">
+        Me gusta mucho conocer tu universo, incluso esa parte en la que a veces respondes con pocas palabras como si hubiera cobro por sílaba, o cuando me mandas el sticker más inexplicable de WhatsApp después de una foto JAJAJA. Tienes tus formas particulares de ser y, aunque a veces seas un poquito reservado o brusco, también tienes maneras de consentirme que valoro un montón.
+      </p>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:#2c2530; margin-bottom:12px;">
+        Ojalá sigas aprendiendo, diseñando mentalmente tus próximos pasos de ingeniería, encontrando bichitos curiosos en el camino, escuchando música que te despierte ideas y persiguiendo todo eso que quieres construir. Y que la vida también te deje espacio para respirar, comer algo rico y disfrutar sin sentir que siempre tienes que estar resolviendo una emergencia.
+      </p>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:#2c2530; margin-bottom:12px;">
+        No sé qué vueltas dará este nuevo año, pero quería prepararte algo que se sintiera genuinamente tuyo. Así que aquí está este pequeño universo, con sus personajes, sus criaturas y sus mensajes escondidos.
+      </p>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.15rem; color:#2c2530; margin-bottom:12px;">
+        Espero que te saque al menos una sonrisa honesta.
+      </p>
+
+      <p style="font-family:'Patrick Hand', cursive; font-size:1.2rem; color:#7a1f38; font-weight:700;">
+        ¡Feliz vuelta al sol, Santi! Que te pasen cosas increíbles. Un abrazo gigante. 🪐✨
+      </p>
+
+      <div style="font-family:'Patrick Hand', cursive; font-size:1.35rem; color:#7a1f38; text-align:right; margin-top:16px;">
+        — Una persona aburrida que te quiere, muak ♡
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:20px;">
+        <button class="btn btn-secondary" style="margin:0; width:50%;" onclick="foldBack()">
+          ✉ Guardar en sobre
+        </button>
+        <button class="btn btn-primary" style="margin:0; width:50%;" onclick="closeFinalLetterModal()">
+          Guardar recuerdo ✓
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- =========================================================
+     JAVASCRIPT: LOGICA COMPLETA DE MISIONES Y MEDALLAS LOL
+     ========================================================= -->
+<script>
+const characters = {
+  mora: { name: "Mora", file: "moraRecurso 1.svg" },
+  rojo: { name: "Rojo", file: "rojoRecurso 2.svg" },
+  negro: { name: "Negro", file: "negroRecurso 3.svg" },
+  largo: { name: "Largo", file: "largoRecurso 4.svg" }
+};
+const savedChar = localStorage.getItem('santi_character') || 'mora';
+const activeChar = characters[savedChar] || characters.mora;
+document.getElementById('pilotImg').src = 'SVG/' + activeChar.file;
+document.getElementById('pilotName').textContent = activeChar.name;
+
+let audioCtx = null;
+let soundEnabled = true;
+function initAudio() {
+  if (!audioCtx) {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (AudioContext) audioCtx = new AudioContext();
+  }
+}
+function playSfx(t) {
+  if (!soundEnabled) return;
+  initAudio();
+  if (!audioCtx) return;
+  const now = audioCtx.currentTime;
+
+  if (t === 'blip') {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, now);
+    gain.gain.setValueAtTime(0.12, now);
+    gain.gain.linearRampToValueAtTime(0, now + 0.08);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.08);
+  } else if (t === 'seal') {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(220, now);
+    osc.frequency.exponentialRampToValueAtTime(60, now + 0.18);
+    gain.gain.setValueAtTime(0.2, now);
+    gain.gain.linearRampToValueAtTime(0, now + 0.18);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start(now);
+    osc.stop(now + 0.18);
+  } else if (t === 'hextech') {
+    [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, now + idx * 0.07);
+      gain.gain.setValueAtTime(0.14, now + idx * 0.07);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.07 + 0.35);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now + idx * 0.07);
+      osc.stop(now + idx * 0.07 + 0.4);
+    });
+  }
+}
+function toggleAudio() {
+  soundEnabled = !soundEnabled;
+  document.getElementById('soundBtn').textContent = soundEnabled ? '🔊 SFX' : '🔈 MUTE';
+  toast(soundEnabled ? "Sonido activado" : "Sonido silenciado");
+}
+
+const completed = new Set();
+try {
+  const m = JSON.parse(localStorage.getItem('santi_missions') || '[]');
+  m.forEach(id => completed.add(id));
+} catch(e){}
+
+const lolBadges = [
+  { id: "smoke", rank: "CHALLENGER DE VIDA", emoji: "🫁", title: "Libre de Humo", desc: "El verdadero logro heroico. Pulmones limpios y victoria para toda la vida.", special: true },
+  { id: "bugs", rank: "MAESTRÍA VII", emoji: "🪲", title: "Bug Hunter & Dino", desc: "Catalogaste los insectos y superaste el dilema de dinosaurios." },
+  { id: "ranked", rank: "MAESTRÍA VI", emoji: "⚔️", title: "Caos Clasificado", desc: "Superaste el análisis sociopolítico y el SoloQ de LoL." },
+  { id: "radio", rank: "FRECUENCIA 27.10", emoji: "📻", title: "Radio Clandestina", desc: "Banda sonora independiente para la ruta." },
+  { id: "archive", rank: "ARCADE RETRO", emoji: "👾", title: "Creatures Master", desc: "Pingu, Vive 100 Rojo, Bebop y Cacería al Blanco." },
+  { id: "memories", rank: "ARCHIVISTA", emoji: "🌺", title: "Curador Visual", desc: "Bugambilias y recuerdos atesorados." },
+  { id: "envelopes", rank: "MENSAJERO", emoji: "✉️", title: "Archivos Secretos", desc: "Abriste los mensajes secretos y el expediente Miku." },
+  { id: "final", rank: "SPACE COWBOY", emoji: "⭐", title: "Recompensa Final", desc: "Desplegaste la carta con la ilustración de cumpleaños." }
+];
+
+function showScreen(id) {
+  playSfx('blip');
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) {
+    el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  renderProgress();
+  renderBadges();
+  updateMissionButtons();
+}
+
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toast.timer);
+  toast.timer = setTimeout(() => el.classList.remove('show'), 2600);
+}
+
+function openMission(id) {
+  showScreen(id);
+}
+function openArcade() {
+  playSfx('blip');
+  window.location.href = 'boton/arcade.html';
+}
+
+function completeMission(id, name) {
+  if (!completed.has(id)) {
+    completed.add(id);
+    try {
+      localStorage.setItem('santi_missions', JSON.stringify([...completed]));
+    } catch(e){}
+    playSfx('hextech');
+    toast("¡Logro desbloqueado: " + name + "! 🏆");
+    renderProgress();
+    renderBadges();
+    updateMissionButtons();
+  }
+}
+
+function renderProgress() {
+  const count = completed.size;
+  const pct = Math.min(100, Math.round((count / 7) * 100));
+  document.getElementById('progress').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = count + " de 7 misiones completadas";
+
+  const rankEl = document.getElementById('rankBadgePreview');
+  if (count === 0) rankEl.textContent = "Aspirante";
+  else if (count < 3) rankEl.textContent = "Rango: Oro IV";
+  else if (count < 6) rankEl.textContent = "Rango: Diamante II";
+  else rankEl.textContent = "Challenger 26 ★";
+}
+
+function renderBadges() {
+  const grid = document.getElementById('badgeGrid');
+  grid.innerHTML = '';
+  lolBadges.forEach(b => {
+    const isUnlocked = b.special || completed.has(b.id);
+    const el = document.createElement('div');
+    el.className = 'lol-medal' + (isUnlocked ? ' unlocked' : '') + (b.special ? ' special-honor' : '');
+    el.onclick = () => {
+      playSfx('blip');
+      toast(b.title + " // " + b.desc);
+    };
+    el.innerHTML = `
+      <div class="crest-frame">
+        <div class="crest-outer"></div>
+        <div class="crest-icon">${b.emoji}</div>
+      </div>
+      <span class="rank-label">${b.rank}</span>
+      <strong style="display:block; font-size:.82rem; color:var(--gold-light); margin:2px 0;">${b.title}</strong>
+      <small style="font-size:.7rem; color:var(--text-muted); display:block; line-height:1.2;">${b.desc}</small>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function updateMissionButtons() {
+  document.querySelectorAll('.mission').forEach(item => {
+    const id = item.dataset.mission;
+    if (completed.has(id)) item.classList.add('done');
+  });
+}
+
+// BUGS & DINOSAURIOS
+const foundBugs = new Set();
+let dinoAnswered = false;
+const bugData = [
+  { emoji: "🪲", name: "Escarabajo", fact: "Armadura molecular de quitina.", desc: "Sus élitros protegen sus alas con una resistencia que desafía caídas y presiones." },
+  { emoji: "🦋", name: "Polilla", fact: "Navegante nocturna con determinación.", desc: "Vuelan hacia la luz con la misma convicción con la que uno juega 'la última partida' de noche." },
+  { emoji: "🐜", name: "Hormiga", fact: "Titán del microuniverso.", desc: "Capaz de levantar 50 veces su propio peso y estructurar colonias sin perder la cordura." }
+];
+function findBug(i) {
+  playSfx('blip');
+  const b = bugData[i];
+  document.getElementById('bugDisplay').textContent = b.emoji;
+  document.getElementById('bugFact').textContent = b.name + " — " + b.fact;
+  document.getElementById('bugDescription').textContent = b.desc;
+  foundBugs.add(i);
+  document.getElementById('bug' + i).classList.add('selected');
+  document.getElementById('bugProgress').style.width = (foundBugs.size / 3 * 100) + '%';
+  document.getElementById('bugCount').textContent = foundBugs.size + " / 3 criaturas catalogadas";
+  checkBugDone();
+}
+function answerDino(val, el) {
+  playSfx('blip');
+  dinoAnswered = true;
+  el.closest('div').querySelectorAll('.answer').forEach(b => b.classList.remove('selected','correct','incorrect'));
+  el.classList.add(val === 'b' ? 'correct' : 'incorrect');
+  toast(val === 'b' ? '¡Correcto! Triceratops es un ceratópsido.' : 'Incorrecto: pertenece a los ceratópsidos.');
+  checkBugDone();
+}
+function checkBugDone() {
+  if (foundBugs.size === 3 && dinoAnswered) {
+    document.getElementById('bugContinue').disabled = false;
+    playSfx('hextech');
+    toast("¡Colección entomológica y fósil completada!");
+  }
+}
+
+// QUIZ
+const quizAnswers = {};
+function answerQuiz(q, val, el) {
+  playSfx('blip');
+  quizAnswers[q] = val;
+  el.closest('div').querySelectorAll('.answer').forEach(b => b.classList.remove('selected','correct','incorrect'));
+  const key = ['b','c','b'][q];
+  el.classList.add(val === key ? 'correct' : 'incorrect');
+}
+function submitQuiz() {
+  if ([0, 1, 2].some(i => !quizAnswers[i])) {
+    toast("Faltan preguntas por responder.");
+    return;
+  }
+  playSfx('hextech');
+  const resultEl = document.getElementById('quizResult');
+  const score = [quizAnswers[0] === 'b', quizAnswers[1] === 'c', quizAnswers[2] === 'b'].filter(Boolean).length;
+  resultEl.innerHTML = `<strong>RESULTADO: ${score}/3 correctas</strong><br>1: Constitución de 1991 · 2: dragón elemental · 3: controles entre ramas del poder.`;
+  resultEl.classList.remove('hidden');
+  completeMission('ranked', 'Caos Clasificado');
+}
+
+// SOBRES
+const openedEnvs = new Set();
+function openEnv(i) {
+  playSfx('blip');
+  const el = document.getElementById('envText' + i);
+  el.classList.toggle('hidden');
+  if (!el.classList.contains('hidden')) {
+    openedEnvs.add(i);
+    toast("Mensaje " + (i + 1) + " abierto.");
+  }
+  if (openedEnvs.size === 3) completeMission('envelopes', 'Mensajero Estelar');
+}
+
+// CARTA FINAL 3D
+function openFinalLetterModal() {
+  playSfx('blip');
+  document.getElementById('letterModalOverlay').classList.add('active');
+  document.getElementById('envelope3D').style.display = 'block';
+  document.getElementById('envelopeFlap').style.transform = 'rotateX(0deg)';
+  document.getElementById('waxSeal').style.display = 'grid';
+  document.getElementById('sheetLetter').classList.remove('open');
+}
+function handleLetterOverlayClick(e) {
+  if (e.target.id === 'letterModalOverlay') closeFinalLetterModal();
+}
+function breakSeal() {
+  playSfx('seal');
+  const seal = document.getElementById('waxSeal');
+  const flap = document.getElementById('envelopeFlap');
+  const letter = document.getElementById('sheetLetter');
+  const env = document.getElementById('envelope3D');
+
+  seal.style.transform = "translate(-50%, -50%) scale(1.3)";
+  seal.style.opacity = "0";
+  setTimeout(() => {
+    flap.style.transform = "rotateX(180deg)";
+  }, 250);
+  setTimeout(() => {
+    env.style.display = "none";
+    letter.classList.add('open');
+    playSfx('hextech');
+    completeMission('final', 'Recompensa Final');
+  }, 850);
+}
+function foldBack() {
+  playSfx('blip');
+  const env = document.getElementById('envelope3D');
+  const letter = document.getElementById('sheetLetter');
+  const flap = document.getElementById('envelopeFlap');
+  const seal = document.getElementById('waxSeal');
+
+  letter.classList.remove('open');
+  env.style.display = "block";
+  flap.style.transform = "rotateX(0deg)";
+  seal.style.display = "grid";
+  seal.style.opacity = "1";
+  seal.style.transform = "translate(-50%, -50%) scale(1)";
+}
+function closeFinalLetterModal() {
+  playSfx('blip');
+  document.getElementById('letterModalOverlay').classList.remove('active');
+}
+
+// Inicializar vista
+renderBadges();
+renderProgress();
+updateMissionButtons();
+</script>
+</body>
+</html>
